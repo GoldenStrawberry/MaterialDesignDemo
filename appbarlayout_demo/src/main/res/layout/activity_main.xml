@@ -7,22 +7,45 @@
     android:fitsSystemWindows="true"
     tools:context="github.goldenstrawberry.appbarlayout_demo.MainActivity">
     <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/AppTheme">
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
+        android:layout_height="300dp"
+        android:fitsSystemWindows="true"
+        android:theme="@style/MyCustomTheme">
+        <!-- app:statusBarScrim="#f00" P20上不显示-->
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/ctbl"
             android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:minHeight="?actionBarSize"
-            app:layout_scrollFlags="scroll|snap">
-<!--enterAlways它是下滑时，AppBarLayout的内容先滑动，滑动结束后，NestedScrollView里的内容滑动-->
-<!--enterAlwaysCollapsed它是下滑时，NestedScrollView里的内容先滑动，滑动结束后，AppBarLayout的内容在滑动-->
-<!--enterAlways|enterAlwaysCollapsed它是下滑时，AppBarLayout的内容先滑动到minHeight，然后AppBarLayout的内容在滑动，
-     最后AppBarLayout的内容从minHeight滑动到layout_height-->
-<!--exitUntilCollapsed它是上滑时，AppBarLayout的内容先滑动，压缩内容到minHeight，然后NestedScrollView里的内容先滑动-->
-            <!--snap 代表一种吸附的行为，以AppBarLayout内容的一半为分界点，向上吸附或者向下吸附-->
-        </android.support.v7.widget.Toolbar>
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            app:statusBarScrim="#f00"
+            app:contentScrim="#000"
+            app:popupTheme="@style/MyCustomTheme"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed" >
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@mipmap/yuner"
+                android:scaleType="centerCrop"/>
+
+            <!--android:background="#a0ffff00"-->
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                app:title="巅峰榜 流行指数 第64天"
+                app:layout_collapseMode="pin"
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize">
+                <!--enterAlways它是下滑时，AppBarLayout的内容先滑动，滑动结束后，NestedScrollView里的内容滑动-->
+                <!--enterAlwaysCollapsed它是下滑时，NestedScrollView里的内容先滑动，滑动结束后，AppBarLayout的内容在滑动-->
+                <!--enterAlways|enterAlwaysCollapsed它是下滑时，AppBarLayout的内容先滑动到minHeight，然后AppBarLayout的内容在滑动，
+                 最后AppBarLayout的内容从minHeight滑动到layout_height-->
+                <!--exitUntilCollapsed它是上滑时，AppBarLayout的内容先滑动，压缩内容到minHeight，然后NestedScrollView里的内容先滑动-->
+                <!--snap 代表一种吸附的行为，以AppBarLayout内容的一半为分界点，向上吸附或者向下吸附-->
+            </android.support.v7.widget.Toolbar>
+
+        </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
