@@ -14,7 +14,7 @@
         android:theme="@style/MyCustomTheme">
         <!-- app:statusBarScrim="#f00" P20上不显示-->
         <android.support.design.widget.CollapsingToolbarLayout
-            
+
             android:id="@+id/ctbl"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
