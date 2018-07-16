@@ -1,1 +1,1 @@
-include ':coordinatorlayout_demo', ':appbarlayout_demo'
+include ':coordinatorlayout_demo', ':appbarlayout_demo', ':bottomsheetbehavior_demo'
